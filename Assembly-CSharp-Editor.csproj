@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_MK\MKGlowFree\Editor\MKGlowFreeEditor.cs" />
+     <Compile Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Editor\EffectControllerInspector.cs" />
+     <Compile Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Editor\EffectToolBar.cs" />
+     <Compile Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Editor\RenderEffectInspector.cs" />
+     <Compile Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Editor\ShaderCustomEditor\ShaderMaterialsEditor.cs" />
+     <Compile Include="Assets\SKJ Particle Tutorial\Plugins\Effect\Editor\XUIUtils.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/U3Dproj/Test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

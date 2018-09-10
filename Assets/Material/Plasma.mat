@@ -8,7 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Plasma
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALPHAPREMULTIPLY_ON _EMISSION _GLOSSYREFLECTIONS_OFF
+    _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -73,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.7882353}
-    - _EmissionColor: {r: 0.5896226, g: 0.77466846, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.44238073, b: 0.33490568, a: 0.7882353}
+    - _EmissionColor: {r: 1, g: 0.601802, b: 0.5896226, a: 1}
