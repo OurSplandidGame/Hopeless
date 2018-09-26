@@ -57,7 +57,6 @@
      <Compile Include="Assets\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\CharMani.cs" />
-     <Compile Include="Assets\Scripts\HarmZone.cs" />
      <Compile Include="Assets\Scripts\MainCam.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Spider.cs" />
@@ -77,8 +76,10 @@
      <Compile Include="Assets\Yurowm\Demo\Scripts\Actions.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterPanel.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\CharacterViewer.cs" />
-     <Compile Include="Assets\Yurowm\Demo\Scripts\GunController.cs" />
      <Compile Include="Assets\Yurowm\Demo\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Yurowm\Weapons\AOE\Scripts\HarmZone.cs" />
+     <Compile Include="Assets\Yurowm\Weapons\GunController.cs" />
+     <Compile Include="Assets\Yurowm\Weapons\LasserGun.cs" />
      <Compile Include="Assets\Zombie\Scripts\Enemy.cs" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
