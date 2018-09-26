@@ -1,50 +1,52 @@
-﻿Shader "Custom/Glow" 
+﻿Shader "Hidden/Glow"
+{
+	Properties
 	{
-		Properties
+		_MainTex ("Texture", 2D) = "white" {}
+	}
+	SubShader
+	{
+		// No culling or depth
+		Cull Off ZWrite Off ZTest Always
+
+		Pass
 		{
-			_ColorTint("Color Tint", Color) = (1, 1, 1, 1)
-			_MainTex("Base (RGB)", 2D) = "white" {}
-			_BumpMap("Normal Map", 2D) = "bump" {}
-			_RimColor("Rim Color", Color) = (1, 1, 1, 1)
-			_RimPower("Rim Power", Range(1.0, 6.0)) = 3.0
-
-		}
-			SubShader{
-
-			Tags{ "RenderType" = "Opaque" }
-
 			CGPROGRAM
-#pragma surface surf Lambert
+			#pragma vertex vert
+			#pragma fragment frag
+			
+			#include "UnityCG.cginc"
 
-			struct Input {
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float2 uv : TEXCOORD0;
+			};
 
-			float4 color : Color;
-			float2 uv_MainTex;
-			float2 uv_BumpMap;
-			float3 viewDir;
+			struct v2f
+			{
+				float2 uv : TEXCOORD0;
+				float4 vertex : SV_POSITION;
+			};
 
-		};
+			v2f vert (appdata v)
+			{
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.uv = v.uv;
+				return o;
+			}
+			
+			sampler2D _MainTex;
 
-		float4 _ColorTint;
-		sampler2D _MainTex;
-		sampler2D _BumpMap;
-		float4 _RimColor;
-		float _RimPower;
-
-		void surf(Input IN, inout SurfaceOutput o)
-		{
-
-
-			IN.color = _ColorTint;
-			o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * IN.color;
-			o.Normal = UnpackNormal(tex2D(_BumpMap,IN.uv_BumpMap));
-
-			half rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
-			o.Emission = _RimColor.rgb * pow(rim, _RimPower);
-
-
+			fixed4 frag (v2f i) : SV_Target
+			{
+				fixed4 col = tex2D(_MainTex, i.uv);
+				// just invert the colors
+				col.rgb = 1 - col.rgb;
+				return col;
+			}
+			ENDCG
 		}
-		ENDCG
-		}
-			FallBack "Diffuse"
-	}﻿
+	}
+}
