@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1169,6 +1169,11 @@ Prefab:
       propertyPath: ForceModule.inWorldSpace
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198829701795662742, guid: 21f3519d0e2abd14795532916308c124,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 50.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21f3519d0e2abd14795532916308c124, type: 2}
   m_IsPrefabAsset: 0
@@ -1482,6 +1487,26 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 586862458}
+    - target: {fileID: 224665809027605206, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224665809027605206, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224277399825079768, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224277399825079768, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee847b6ffa8b214abcf9d8d2f260582, type: 2}
   m_IsPrefabAsset: 0
