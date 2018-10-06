@@ -9,6 +9,11 @@ public class PlayerController : Character {
 	public Arsenal[] arsenal;
     public float speed;
     public Camera cam;
+    public float maxMana;
+    public float maxDamage;
+    public float maxArmor;
+    public float mana;
+    public float armor;
 
     private Actions action;
     private CharacterController player;

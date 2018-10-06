@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public GameObject target;
     public GameObject inventory;
     public GameObject characterSystem;
     public GameObject craftSystem;
@@ -15,23 +16,14 @@ public class PlayerInventory : MonoBehaviour
     private Tooltip toolTip;
 
     private InputManager inputManagerDatabase;
+    private PlayerController player;
 
-    public GameObject HPMANACanvas;
+    //public GameObject HPMANACanvas;
 
     Text hpText;
     Text manaText;
     Image hpImage;
     Image manaImage;
-
-    float maxHealth = 100;
-    float maxMana = 100;
-    float maxDamage = 0;
-    float maxArmor = 0;
-
-    public float currentHealth = 60;
-    float currentMana = 100;
-    float currentDamage = 0;
-    float currentArmor = 0;
 
     int normalSize = 3;
 
@@ -172,6 +164,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (inputManagerDatabase == null)
             inputManagerDatabase = (InputManager)Resources.Load("InputManager");
+        if (player == null)
+            player = target.GetComponent<PlayerController>();
 
         if (craftSystem != null)
             cS = craftSystem.GetComponent<CraftSystem>();
@@ -207,31 +201,31 @@ public class PlayerInventory : MonoBehaviour
         {
             if (item.itemAttributes[i].attributeName == "Health")
             {
-                if ((currentHealth + item.itemAttributes[i].attributeValue) > maxHealth)
-                    currentHealth = maxHealth;
+                if ((player.health + item.itemAttributes[i].attributeValue) > player.maxHealth)
+                    player.health = player.maxHealth;
                 else
-                    currentHealth += item.itemAttributes[i].attributeValue;
+                    player.health += item.itemAttributes[i].attributeValue;
             }
             if (item.itemAttributes[i].attributeName == "Mana")
             {
-                if ((currentMana + item.itemAttributes[i].attributeValue) > maxMana)
-                    currentMana = maxMana;
+                if ((player.mana + item.itemAttributes[i].attributeValue) > player.maxMana)
+                    player.mana = player.maxMana;
                 else
-                    currentMana += item.itemAttributes[i].attributeValue;
+                    player.mana += item.itemAttributes[i].attributeValue;
             }
             if (item.itemAttributes[i].attributeName == "Armor")
             {
-                if ((currentArmor + item.itemAttributes[i].attributeValue) > maxArmor)
-                    currentArmor = maxArmor;
+                if ((player.armor + item.itemAttributes[i].attributeValue) > player.maxArmor)
+                    player.armor = player.maxArmor;
                 else
-                    currentArmor += item.itemAttributes[i].attributeValue;
+                    player.armor += item.itemAttributes[i].attributeValue;
             }
             if (item.itemAttributes[i].attributeName == "Damage")
             {
-                if ((currentDamage + item.itemAttributes[i].attributeValue) > maxDamage)
-                    currentDamage = maxDamage;
+                if ((player.damage + item.itemAttributes[i].attributeValue) > player.maxDamage)
+                    player.damage = player.maxDamage;
                 else
-                    currentDamage += item.itemAttributes[i].attributeValue;
+                    player.damage += item.itemAttributes[i].attributeValue;
             }
         }
         //if (HPMANACanvas != null)
@@ -246,13 +240,13 @@ public class PlayerInventory : MonoBehaviour
         for (int i = 0; i < item.itemAttributes.Count; i++)
         {
             if (item.itemAttributes[i].attributeName == "Health")
-                maxHealth += item.itemAttributes[i].attributeValue;
+                player.maxHealth += item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Mana")
-                maxMana += item.itemAttributes[i].attributeValue;
+                player.maxMana += item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Armor")
-                maxArmor += item.itemAttributes[i].attributeValue;
+                player.maxArmor += item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Damage")
-                maxDamage += item.itemAttributes[i].attributeValue;
+                player.maxDamage += item.itemAttributes[i].attributeValue;
         }
         //if (HPMANACanvas != null)
         //{
@@ -266,13 +260,13 @@ public class PlayerInventory : MonoBehaviour
         for (int i = 0; i < item.itemAttributes.Count; i++)
         {
             if (item.itemAttributes[i].attributeName == "Health")
-                maxHealth -= item.itemAttributes[i].attributeValue;
+                player.maxHealth -= item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Mana")
-                maxMana -= item.itemAttributes[i].attributeValue;
+                player.maxMana -= item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Armor")
-                maxArmor -= item.itemAttributes[i].attributeValue;
+                player.maxArmor -= item.itemAttributes[i].attributeValue;
             if (item.itemAttributes[i].attributeName == "Damage")
-                maxDamage -= item.itemAttributes[i].attributeValue;
+                player.maxDamage -= item.itemAttributes[i].attributeValue;
         }
         //if (HPMANACanvas != null)
         //{
