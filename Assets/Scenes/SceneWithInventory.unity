@@ -2031,7 +2031,6 @@ GameObject:
   - component: {fileID: 586862461}
   - component: {fileID: 586862459}
   - component: {fileID: 586862460}
-  - component: {fileID: 586862467}
   - component: {fileID: 586862466}
   m_Layer: 0
   m_Name: Sci-Fi_Soldier
@@ -2196,22 +2195,6 @@ MonoBehaviour:
   inventory: {fileID: 279551491}
   characterSystem: {fileID: 0}
   craftSystem: {fileID: 0}
---- !u!114 &586862467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 586862458}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aaa262ffdd96c8468c4031059d07825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementspeed: 5
-  mouseSensitivity: 2
-  verticalAngleLimit: 60
-  jumpSpeed: 5
-  showInventory: 0
 --- !u!1 &628737128
 GameObject:
   m_ObjectHideFlags: 0
