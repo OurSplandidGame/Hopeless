@@ -2128,6 +2128,11 @@ MonoBehaviour:
     controller: {fileID: 9100000, guid: dffbd9326394a8d47a87a1e2aec70a59, type: 2}
   speed: 7
   cam: {fileID: 534669904}
+  maxMana: 0
+  maxDamage: 0
+  maxArmor: 0
+  mana: 0
+  armor: 0
 --- !u!114 &586862463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,11 +2192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db4493228a4ba442a891316e3ee246f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 586862458}
   inventory: {fileID: 279551491}
   characterSystem: {fileID: 0}
   craftSystem: {fileID: 0}
-  HPMANACanvas: {fileID: 0}
-  currentHealth: 60
 --- !u!114 &586862467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3251,6 +3255,35 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068622282}
   m_CullTransparentMesh: 0
+--- !u!1 &1075727052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1634997725400016, guid: 05ee8eb2420ad5243b8044a5f357ac17,
+    type: 2}
+  m_PrefabInternal: {fileID: 2091793111}
+--- !u!114 &1075727053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075727052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2579761e16114d94d874d2a9a06887e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemName: 
+    itemID: 0
+    itemDesc: 
+    itemIcon: {fileID: 0}
+    itemModel: {fileID: 0}
+    itemValue: 1
+    itemType: 0
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
 --- !u!1001 &1118282680
 Prefab:
   m_ObjectHideFlags: 0
@@ -4271,6 +4304,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224573032796921794, guid: bee847b6ffa8b214abcf9d8d2f260582,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -4389,6 +4427,46 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586862466}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: inventoryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092360011977638, guid: bee847b6ffa8b214abcf9d8d2f260582,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee847b6ffa8b214abcf9d8d2f260582, type: 2}
